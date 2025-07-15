@@ -5,6 +5,10 @@ public class ProgramJogo{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         Jogo jogador1 = new Jogo();
+        Jogo jogador2 = new Jogo();
+
+        jogador2.nome = "Lua";
+        jogador2.classificacao = "guerreiro";
 
         System.out.println("Informe o nome do seu personagem: ");
         jogador1.nome = scanner.nextLine();
@@ -19,21 +23,21 @@ public class ProgramJogo{
 
         jogador1.vida = 100;
         jogador1.nivel = 1;
-        System.out.println("\nA vida do seu personagem comecou em: "+jogador1.vida+" e seu nivel e o: "+jogador1.nivel);
+        System.out.println("\nA vida do seu personagem comecou em "+jogador1.vida+" e seu nivel inicial e "+jogador1.nivel); // OK
 
         jogador1.atacar();
         System.out.println("Informe o dano dado: ");
         int dano = scanner.nextInt();
         
         if (dano >= 1 && dano < 100){ 
-            jogador1.receberDano(dano);  
-             System.out.println("A vida do seu adversario e de: "+jogador1.vida);
+            jogador2.receberDano(dano);  
+            System.out.println("A vida do seu adversario e de: "+jogador2.vida);
         }
 
-        System.out.print("Informe o valor da mana para aplicar a habilidade: ");
-        int mana = scanner.nextInt();
+        /*System.out.print("Informe o valor da mana para aplicar a habilidade: ");
+        jogador1.mana = scanner.nextInt();
         jogador1.usarHabilidadeEspecial(mana); 
-        System.out.println("A quantidade de mana restante é: "+jogador1.manaAtual);
+        System.out.println("A quantidade de mana restante e: "+jogador1.manaAtual);*/
 
         jogador1.mostrarStatus(); 
         System.out.println("Nome: "+jogador1.nome+" | Classe: "+jogador1.classificacao+" | Nivel: "+jogador1.nivel+" | Vida: "+jogador1.vida+" | Forca: "+jogador1.forca);
